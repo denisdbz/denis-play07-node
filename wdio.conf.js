@@ -6,7 +6,10 @@ export const config = {
   maxInstances: 1,
   capabilities: [{
     maxInstances: 1,
-    browserName: 'chrome'
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+      args: ['--headless', '--disable-gpu', '--window-size=1280,800']
+    }
   }],
   logLevel: 'error',
   bail: 0,
