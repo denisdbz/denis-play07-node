@@ -14,7 +14,8 @@ RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add
 WORKDIR /app
 COPY . .
 
-RUN npm install
+# Instala somente dependências de produção
+RUN npm install --omit=dev
 
 EXPOSE 3000
 CMD ["node", "app.js"]
